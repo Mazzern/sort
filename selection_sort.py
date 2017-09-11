@@ -2,7 +2,6 @@ from RandList import MakeList
 
 #ソートするリスト作成
 li = MakeList()
-
 print(li)
 
 #ソート
