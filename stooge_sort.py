@@ -1,11 +1,8 @@
-from RandList import MakeList
-
-#ソートするリスト作成
-li = MakeList()
-print(li)
+import time
+import numpy as np
 
 #ソート
-def StoogeSort(li, i=0, j=len(li)-1):
+def StoogeSort(li, i, j):
     if li[j] < li[i]:
         temp = li[i]
         li[i] = li[j]
@@ -17,6 +14,15 @@ def StoogeSort(li, i=0, j=len(li)-1):
         StoogeSort(li,i,j-t)
     return li
 
-#実行
-li = StoogeSort(li, i=0, j=len(li)-1)
-print(li)
+if __name__ == '__main__':
+    Min = 1
+    Max = 1000
+    n = Max
+    List = np.random.randint(Min, Max, n)
+
+    st = time.time()
+
+    srtli = StoogeSort(List, 0, len(List)-1)
+
+    print(srtli)
+    print(str(time.time() - st) + 'sec.')
